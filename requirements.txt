@@ -1,0 +1,7 @@
+edge-tts
+pydub
+pytest
+pytest-asyncio
+google-cloud-aiplatform
+feedgen
+pytz
