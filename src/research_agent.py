@@ -18,7 +18,7 @@ class ResearchAgent:
     """
     def __init__(self, api_key: str = None):
         # API keys are no longer needed for Google Search Grounding (handled by Workload Identity)
-        self.model = get_model("gemini-2.5-flash") # Using flash for faster research
+        self.model = get_model("gemini-1.5-flash") # Using flash for faster research
         
         self.search_tool = None
         if Tool and grounding:

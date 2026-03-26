@@ -31,7 +31,7 @@ def init_vertex() -> None:
     logger.info("Vertex AI Initialized (project=%s, location=%s)", project, location)
     _initialized = True
 
-def get_model(model_name: str = "gemini-2.5-flash") -> "GenerativeModel":
+def get_model(model_name: str = "gemini-1.5-flash") -> "GenerativeModel":
     """주어진 이름의 Vertex AI GenerativeModel 인스턴스를 반환합니다."""
     init_vertex()
     if not GenerativeModel:
