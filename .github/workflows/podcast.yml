@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write  # To save the mp3 and commit to gh-pages branch
+      id-token: write  # Required for Google WIF OIDC Auth
 
     steps:
       - name: Checkout repository
@@ -31,7 +32,8 @@ jobs:
       - id: 'auth'
         uses: 'google-github-actions/auth@v2'
         with:
-          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+          workload_identity_provider: '${{ secrets.WIF_PROVIDER }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
 
       - name: Checkout gh-pages history
         uses: actions/checkout@v4
